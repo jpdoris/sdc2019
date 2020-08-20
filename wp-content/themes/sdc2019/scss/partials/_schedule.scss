@@ -1,0 +1,626 @@
+.content-schedule,
+.content-schedule-v1 {
+    @include bp-768 {
+        padding-left: 96px;
+        padding-right: 96px;
+    }
+
+    a {
+        cursor: pointer;
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    #schedule-section {
+        margin-bottom: 86px;
+
+        @include bp-768 {
+            margin-bottom: 180px;
+        }
+
+        #scheduleTab {
+            border-bottom: none;
+            margin-bottom: 26px;
+
+            @include bp-768 {
+                margin-bottom: 93px;
+            }
+
+            .nav-item {
+                padding: 0.5rem 30px;
+
+                @include bp-768 {
+                    padding-left: 52px;
+                    padding-right: 52px;
+                }
+
+                .nav-link {
+                    border: none;
+                    padding: 0;
+                    @include set-text($timberwolf, 16px, 18px, samsungone-black);
+
+                    @include bp-768 {
+                        font-size: 34px;
+                        line-height: 40px;
+                    }
+
+                    &.active {
+                        border-bottom: 3px solid $black;
+                        color: $black;
+                    }
+                }
+            }
+        }
+    }
+
+    #sessions-section {
+        margin-bottom: 64px;
+        margin-left: 36px;
+        margin-right: 36px;
+
+        h1 {
+            position: relative;
+
+            span {
+                position: absolute;
+                right: 0;
+                top: -2px;
+
+                a {
+                    @include set-text($toreabay, 14px, 16px, samsungone-black);
+                }
+
+                @include bp-1200 {
+                    top: -10px;
+                    a {
+                        @include set-text($toreabay, 22px, 26px, samsungone-black);
+                    }
+                }
+
+            }
+        }
+
+        @include bp-768 {
+            margin-bottom: 195px;
+        }
+
+        p {
+            @include set-text($black, 14px, 17px, samsungone-black);
+            text-align: center;
+            margin-left: auto;
+            margin-right: auto;
+            max-width: 255px;
+
+            @include bp-768 {
+                font-size: 32px;
+                line-height: 46px;
+                max-width: 826px;
+            }
+        }
+
+        .filter-topics {
+            padding-top: 12px;
+
+            h2 {
+                position: relative;
+                @include set-text($black, 16px, 18px, samsungone-black);
+
+                @include bp-1200 {
+                    @include set-text($black, 34px, 40px, samsungone-black);
+                }
+
+                span {
+                    position: absolute;
+                    right: 0;
+                    top: -2px;
+
+                    a {
+                        @include set-text($toreabay, 14px, 16px, samsungone-black);
+                    }
+                }
+            }
+
+            button {
+                @include set-text($dove-gray, 14px, 17px, samsungone);
+                background: $white;
+                margin: 8px 18px 8px 0;
+                padding: 6px 10px;
+                border: 1px solid $dove-gray;
+                -webkit-border-radius: 8px;
+                -moz-border-radius: 8px;
+                border-radius: 8px;
+
+                &:first-of-type {
+                    margin-left: 0;
+                }
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+
+                &.filter-selected {
+                    color: $white;
+                    background: $toreabay;
+                    &:after {
+                        content: "X";
+                        position: relative;
+                        right: 0;
+                        padding-left: 10px;
+                    }
+                }
+            }
+
+            @include bp-1200 {
+                button {
+                    @include set-text($dove-gray, 22px, 26px, samsungone);
+                    margin: 15px 30px 15px 0;
+                    padding: 8px 12px;
+                    -webkit-border-radius: 15px;
+                    -moz-border-radius: 15px;
+                    border-radius: 15px;
+                }
+            }
+        }
+
+        .session-search {
+            .search-form {
+                position: relative;
+                margin: 30px 0 20px;
+
+                input {
+                    @include set-text($dove-gray, 14px, 17px, samsungone);
+                    background: url(#{$img-path}magnify.svg) 12px center no-repeat;
+                    width: 100%;
+                    padding: 6px 12px 6px 36px;
+                    border: 1px solid $dove-gray;
+                    -webkit-border-radius: 8px;
+                    -moz-border-radius: 8px;
+                    border-radius: 8px;
+                }
+
+                button {
+                    @include set-text($dove-gray, 14px, 17px, samsungone);
+                    background: $white;
+                    margin: 22px 10px 22px 0;
+                    padding: 8px 10px;
+                    border: 1px solid $dove-gray;
+                    -webkit-border-radius: 8px;
+                    -moz-border-radius: 8px;
+                    border-radius: 8px;
+
+                    &.selected {
+                        background: $toreabay;
+                    }
+
+                    &#day1 {
+                        border-top-right-radius: 0;
+                        border-bottom-right-radius: 0;
+                        margin-right: -3px;
+                        border-right: 1px solid $dove-gray;
+                    }
+
+                    &#day2 {
+                        border-top-left-radius: 0;
+                        border-bottom-left-radius: 0;
+                        margin-left: -3px;
+                        margin-right: 20px;
+                        border-left: 1px solid $dove-gray;
+                    }
+                }
+
+                .select-menu {
+                    display: inline-flex;
+                    width: 72px;
+                    margin-right: 15px;
+                    padding: 2px 4px;
+                    border: 1px solid $dove-gray;
+                    -webkit-border-radius: 8px;
+                    -moz-border-radius: 8px;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    background: $white url(#{$img-path}dropdown-arrow.svg) no-repeat 90% 50%;
+
+                    &:last-of-type {
+                        margin-right: 0;
+                    }
+
+                    select {
+                        @include set-text($dove-gray, 14px, 17px, samsungone);
+                        width: 130%;
+                        padding: 5px 8px;
+                        border: none;
+                        box-shadow: none;
+                        background: transparent;
+                        background-image: none;
+                        -webkit-appearance: none;
+                    }
+
+                    select:focus {
+                        outline: none;
+                    }
+                }
+
+                @include bp-1200 {
+                    margin-top: 20px;
+                    @include set-text($dove-gray, 22px, 26px, samsungone);
+
+                    input {
+                        @include set-text($dove-gray, 22px, 26px, samsungone);
+                        width: 30%;
+                        margin: 20px 30px 20px 0;
+                        padding: 8px 12px 8px 36px;
+                        border: 1px solid $dove-gray;
+                        -webkit-border-radius: 12px;
+                        -moz-border-radius: 12px;
+                        border-radius: 12px;
+                    }
+
+                    button {
+                        @include set-text($dove-gray, 22px, 26px, samsungone);
+                        margin: 15px 30px 15px 0;
+                    }
+                    .select-menu {
+                        width: 120px;
+                        margin-right: 30px;
+                        padding: 2px 4px;
+                        border: 1px solid $dove-gray;
+                        -webkit-border-radius: 8px;
+                        -moz-border-radius: 8px;
+                        border-radius: 8px;
+
+                        select {
+                            @include set-text($dove-gray, 22px, 26px, samsungone);
+                            width: 130%;
+                            padding: 5px 8px;
+                        }
+                    }
+                }
+
+                span {
+                    &.clear-all {
+                        position: absolute;
+                        right: 0;
+                        top: 30px;
+
+                        a {
+                            @include set-text($toreabay, 22px, 26px, samsungone-black);
+                        }
+                    }
+                }
+            }
+        }
+
+        .show-sessions {
+            @include set-text($black, 14px, 16px, samsungone);
+            padding: 40px 15px;
+
+            .session-row {
+                padding: 12px 0;
+                border-bottom: 1px solid $toreabay;
+
+                &:first-of-type {
+                    border-top: 1px solid $toreabay;
+                }
+                .session-name {
+                    @include set-text($black, 14px, 16px, samsungone-black);
+                }
+                div {
+                    padding-left: 0;
+                }
+            }
+
+            @include bp-1200 {
+                @include set-text($black, 34px, 40px, samsungone);
+                padding-top: 60px;
+
+                .session-row {
+                    padding: 24px 0;
+
+                  .session-time {
+                    text-align: center;
+                  }
+                  .session-name {
+                    @include set-text($black, 34px, 40px, samsungone-black);
+                  }
+                }
+            }
+        }
+
+        .view-more {
+            display: none;
+            text-align: center;
+
+            a {
+                cursor: pointer;
+                @include set-text($toreabay, 18px, 24px, samsungone-black);
+
+                @include bp-1200 {
+                    @include set-text($toreabay, 34px, 40px, samsungone-black);
+                }
+            }
+        }
+
+    }
+
+    h1 {
+        @include set-text($black, 24px, 29px, samsungsharpsans-bold);
+
+        @include bp-768 {
+            font-size: 62px;
+            line-height: normal;
+        }
+    }
+
+    .modal {
+        @include media-breakpoint-down(md) {
+            top: 133px;
+            bottom: 0;
+
+            .modal-dialog {
+                max-width: none;
+                margin: 0;
+                height: 100%;
+
+                .modal-content {
+                    padding-top: 0;
+                    padding-bottom: 0;
+                    height: 100%;
+                }
+            }
+        }
+
+        .modal-dialog {
+            @include bp-992 {
+                max-width: 1400px;
+                width: 70%;
+            }
+
+            .modal-content {
+                padding: 37px;
+
+                @include bp-992 {
+                    border-top: 36px solid $toreabay;
+                    border-radius: 0;
+                    padding: 0 50px;
+                }
+
+                @include bp-1920 {
+                    padding: 0 140px;
+                }
+
+                .modal-header,
+                .modal-body {
+                    .modal__back-btn {
+                        padding: 0;
+                        background-color: transparent;
+                        border: 0;
+                        appearance: none;
+                        padding: 1rem 1rem;
+                        margin: -1rem -1rem -1rem 0;
+
+                        img {
+                            width: 13px;
+                        }
+                    }
+                }
+
+                .modal-header {
+                    border-bottom: none;
+
+                    @include bp-992 {
+                        padding-top: 46px;
+                    }
+
+                    .close {
+                        opacity: 1;
+                    }
+                }
+
+
+
+                .modal-body {
+                    color: $black;
+                    padding-bottom: 38px;
+
+                    @include bp-992 {
+                        padding-bottom: 72px;
+                    }
+
+                    .modal__back-btn {
+                        position: absolute;
+                    }
+
+                    h3 {
+                        &.modal__title {
+                            @include set-text($black, 20px, 24px, samsungsharpsans-bold);
+
+                            @include bp-992 {
+                                font-size: 62px;
+                                line-height: 80px;
+                            }
+
+                            &.modal__session__title {
+                                text-align: center;
+                                margin-bottom: 37px;
+                            }
+                        }
+                    }
+
+                    p,
+                    li,
+                    .modal__text {
+                        @include set-text($black, 10px, 16px, samsungone-bold);
+
+                        @include bp-992 {
+                            font-size: 22px;
+                            line-height: 40px;
+                        }
+                    }
+
+                    a.modal__link {
+                        @include set-text($jacksons-purple, 10px, 12px, samsungone-black);
+
+                        @include bp-992 {
+                            font-size: 22px;
+                            line-height: 30px;
+                        }
+                    }
+
+                    .modal__date,
+                    .modal__location,
+                    .modal__subheading {
+                        @include set-text($black, 14px, 18px, samsungone-black);
+
+                        @include bp-992 {
+                            font-size: 34px;
+                            line-height: 41px;
+                        }
+                    }
+
+                    .modal__session__location {
+                        margin-bottom: 26px;
+
+                        @include bp-992 {
+                            margin-bottom: 44px;
+                        }
+                    }
+
+                    .modal__topics {
+                        p {
+                            padding-right: 31px;
+                        }
+
+                        .modal__topics__list {
+                            padding-left: 0;
+
+                            li {
+                                display: inline-block;
+                                color: white;
+                                background-color: $jacksons-purple;
+                                border-radius: 15px;
+                                padding: 10px 17px;
+                                margin-right: 10px;
+                                line-height: normal;
+                                &:last-child {
+                                    margin-right: 0;
+                                }
+                            }
+                        }
+                    }
+
+                    .modal__session__meta-container {
+                        margin-top: 21px;
+                        margin-bottom: 21px;
+
+                        @include bp-992 {
+                            margin-top: 37px;
+                            margin-bottom: 54px;
+                        }
+
+                        .modal__session__meta {
+                            @include bp-992 {
+                                padding-left: 55px;
+                            }
+                        }
+                    }
+
+                    .modal__session__speakers-list {
+                        display: flex;
+                        flex-direction: column;
+
+                        .modal__session__speaker {
+                            display: flex;
+                            align-items: center;
+                            cursor: pointer;
+
+                            margin-bottom: 24px;
+
+                            @include bp-992 {
+                                margin-bottom: 32px;
+                            }
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+
+                            .modal__session__speaker__name,
+                            .modal__session__speaker__title {
+                                margin-bottom: 0;
+                            }
+
+                            .modal__session__speaker__name {
+                                color: $jacksons-purple;
+                            }
+
+                            .modal__session__speaker-list__image {
+                                width: 48px;
+                                padding-right: 16px;
+
+                                @include bp-992 {
+                                    // width: auto;
+                                    width: 80px;
+                                    padding-right: 28px;
+                                }
+                            }
+                        }
+                    }
+
+                    &.modal__speaker__body {
+                        @include media-breakpoint-down(md) {
+                            padding-top: 0;
+                        }
+                    }
+
+                    .modal__speaker__header {
+                        margin-bottom: 37px;
+
+                        @include bp-992 {
+                            margin-bottom: 68px;
+                        }
+                    }
+
+                    .modal__speaker__name {
+                        margin-bottom: 8px;
+                    }
+
+                    .modal__speaker__social-icon {
+                        width: 20px;
+
+                        @include bp-992 {
+                            width: auto;
+                        }
+                    }
+
+                    .modal__speaker__image {
+                        width: 80px;
+                        margin-bottom: 15px;
+
+                        @include bp-992 {
+                            width: auto;
+                            margin-bottom: 0;
+                            margin-right: 80px;
+                        }
+                    }
+
+                    .modal__speaker__links {
+                        .modal__speaker__link {
+                            margin-bottom: 30px;
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@include media-breakpoint-down(md) {
+    .modal-backdrop {
+        display: none;
+    }
+}

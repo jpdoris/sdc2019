@@ -1,0 +1,128 @@
+// Check here for IE issues with image tags that reference svgs.
+// https://gist.github.com/larrybotha/7881691
+
+html {
+  font-size: $base-font-size; //rem baseline
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  @include font-smoothing();
+  &.home, &.home-launch {
+    background-color: $black;
+    margin-bottom: 208px;
+  }
+  color: $white;
+
+  &.mobile-no-scroll {
+    overflow: hidden;
+    @include bp-1200 {
+      overflow: visible;
+    }
+  }
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0;
+}
+
+h1 {
+  @include set-text(black, 44px, 44px);
+
+  @include bp-768 {
+
+  }
+}
+h2 {}
+h3 {}
+h4 {}
+h5 {}
+
+:focus {
+  //outline: none;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+
+  &:hover, &:focus, &:link, &:active, &:visited {
+    outline: none;
+    text-decoration: none;
+  }
+  &.text-decoration-underline {
+    text-decoration: underline;
+  }
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  min-height: 1px;
+}
+
+p {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  @include set-text(white, 16px, 24px);
+}
+
+.no-box-shadow {
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+
+.px-55 {
+  padding-left: 55px;
+  padding-right: 55px;
+}
+
+.px-160 {
+  padding-left: 160px;
+  padding-right: 160px;
+}
+
+.px-lg-160 {
+  @include bp-992 {
+    padding-left: 160px;
+    padding-right: 160px;
+  }
+}
+.cursor-pointer, html .section .fullpage-module.module-image-video-splash .youtube-embed, section.module .page-module-hotel-card .page-module-hotel-card-slider {
+
+    cursor: pointer;
+
+}
+
+
+.samsungone {
+  @include apply-font('samsungone');
+  line-height: 1.2 !important;
+  color: $white !important;
+
+  &.size-38 {
+    font-size: 18px !important;
+
+    @include bp-992 {
+      font-size: 28px !important;
+    }
+
+    @include bp-1200 {
+      font-size: 38px !important;
+    }
+  }
+
+  &.black {
+    color: $black;
+  }
+  &.dark-blue {
+    color: $toreabay;
+  }
+  &.light-blue {
+    color: $cerulean;
+  }
+}

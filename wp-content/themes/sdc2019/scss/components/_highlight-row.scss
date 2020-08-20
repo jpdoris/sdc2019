@@ -1,0 +1,209 @@
+.content-highlight-row {
+    padding: 80px 0 20px;
+    background-color: white;
+    position: relative;
+
+    @include bp-768 {
+        padding: 100px 0 50px;
+    }
+
+    @include bp-1200 {
+        padding: 160px 0 130px;
+    }
+
+    .container {
+        position: relative;
+
+        @include bp-1200 {
+            max-width: 1100px;
+        }
+
+        @include bp(1920px) {
+            max-width: 1700px;
+        }
+
+        h3 {
+            @include set-text($black, 18px, 18px, samsungone-black);
+            margin-bottom: 8px;
+
+            @include bp-768 {
+                font-size: 45px;
+                line-height: 64px;
+                margin-bottom: 12px;
+            }
+
+            @include bp-1200 {
+                font-size: 42px;
+                line-height: 50px;
+                margin-bottom: 36px;
+            }
+
+            @include bp(1920px) {
+                font-size: 60px;
+                line-height: 72px;
+            }
+        }
+
+        p {
+            @include set-text($black, 14px, 17px, samsungone);
+            max-width: 225px;
+            margin: 0 auto;
+
+            @include bp-768 {
+                max-width: none;
+                font-size: 24px;
+                line-height: 30px;
+            }
+
+            @include bp-992 {
+                font-size: 21px;
+                line-height: 27px;
+                margin: 0;
+            }
+
+            @include bp(1920px) {
+                font-size: 30px;
+                line-height: 38px;
+            }
+        }
+
+        .highlight-row {
+            margin-bottom: 62px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+
+            &:last-child {
+                margin-bottom: 0;
+            }
+
+            @include bp-992 {
+                display: flex;
+                max-width: 1294px;
+                margin-left: auto;
+                margin-right: auto;
+                justify-content: space-between;
+                align-items: center;
+
+                h3,
+                p {
+                    text-align: left;
+                }
+
+                &.section-align-left {}
+
+                &.section-align-right {
+                    flex-direction: row-reverse;
+
+                    h3,
+                    p {
+                        text-align: right;
+                    }
+                }
+            }
+
+            @include bp-768 {
+                margin-bottom: 120px;
+            }
+
+            @include bp-1200 {
+                margin-bottom: 256px;
+
+                justify-content: center;
+
+                &.section-align-left {
+                    .description {
+                        margin-left: 65px;
+                    }
+                }
+
+                &.section-align-right {
+                    .description {
+                        margin-right: 65px;
+                    }
+                }
+            }
+
+            @include bp(1500px) {
+                &:nth-child(2) {
+                    margin-left: 0;
+                    margin-right: auto;
+                }
+
+                &:nth-child(3) {
+                    margin-left: auto;
+                    margin-right: 0;
+                }
+
+                &:nth-child(4) {
+                    margin-left: 0;
+                    margin-right: auto;
+                }
+
+                &:nth-child(5) {
+                    margin-left: 0;
+                    margin-right: auto;
+                }
+
+                &:nth-child(6) {
+                    margin-left: auto;
+                    margin-right: 0;
+                }
+
+                &:nth-child(7) {
+                    margin-left: 0;
+                    margin-right: auto;
+                }
+            }
+
+            img {
+                margin-bottom: 15px;
+
+                border-bottom: 15px solid $toreabay;
+
+                @include bp-768 {
+                    margin-bottom: 0;
+                    max-width: 500px;
+                }
+
+                @include bp-992 {
+                    max-width: 420px;
+                    @include home-anim();
+                }
+
+                @include bp-1200 {
+                    max-width: 550px;
+                    width: 469px;
+                }
+
+                @include bp(1300px) {
+                    max-width: none;
+                }
+
+                @include bp(1920px) {
+                    width: auto;
+                }
+            }
+
+            .description {
+                max-width: 494px;
+                margin: 0 auto;
+                position: relative;
+
+                @include bp-992 {
+                    max-width: 420px;
+                    @include home-anim();
+                    margin: 0;
+                }
+
+                @include bp-1200 {
+                    max-width: 345px;
+                }
+
+                @include bp(1920px) {
+                    max-width: 494px;
+                }
+            }
+        }
+    }
+}

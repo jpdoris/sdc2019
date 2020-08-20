@@ -1,0 +1,205 @@
+img.home-header-symbols-sm {
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    @include bp-768 {
+        display: none;
+        .sticky-header & {
+          margin-top: 185px;
+        }
+    }
+}
+
+.home-header-symbols {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    display: none;
+    overflow: hidden;
+
+    @include bp-768 {
+        display: block;
+        .sticky-header & {
+            margin-top: 185px;
+        }
+    }
+
+
+    .container {
+        max-width: 1680px;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    .symbol {
+        position: absolute;
+
+        &.plus {
+            top: 84px;
+            left: calc(50% - 411px);
+            display: none;
+
+            @include bp-1200 {
+                display: block;
+            }
+        }
+        &.v-white {
+            top: 0;
+            left: calc(50% - 211px);
+
+            @include bp-1200 {
+                top: 58px;
+            }
+        }
+        &.s-blue {
+            top: 20px;
+            left: calc(50% - 59px);
+
+            @include bp-1200 {
+                top: 139px;
+            }
+        }
+        &.dollar-sign-orange {
+            top: 0;
+            left: calc(50% + 121px);
+
+            @include bp-1200 {
+                top: 104px;
+            }
+        }
+        &.d-quote-white {
+            top: 102px;
+            left: calc(50% + 366px);
+        }
+        &.slash {
+            top: 282px;
+            left: calc(50% + 156px);
+        }
+        &.question-red {
+            top: 207px;
+            left: calc(50% + 488px);
+        }
+        &.d-quote-blue {
+            top: 427px;
+            left: calc(50% + 255px);
+        }
+        &.s-red {
+            top: 411px;
+            left: calc(50% + 380px);
+        }
+        &.exclamation-red-short {
+            top: 426px;
+            left: calc(50% + 546px);
+        }
+        &.bracket-white {
+            top: 304px;
+            left: calc(50% + 660px);
+        }
+        &.arc-red {
+            top: 680px;
+            left: 500px;
+
+            @include bp-1200 {
+                top: 577px;
+                left: calc(50% + 113px);
+            }
+        }
+        &.colon-blue {
+            top: 540px;
+            left: calc(50% + 374px);
+        }
+        &.exclamation-orange {
+            top: 592px;
+            left: calc(50% + 554px);
+        }
+        &.exclamation-blue {
+            top: 554px;
+            left: calc(50% + 760px);
+        }
+        &.v-orange {
+            top: 662px;
+            left: calc(50% + 356px);
+        }
+        &.v-white-down {
+            top: 570px;
+            left: 368px;
+
+            @include bp-1200 {
+                top: 740px;
+                left: calc(50% + 135px);
+            }
+        }
+        &.plus-blue {
+            top: 683px;
+            left: calc(50% + 176px);
+            display: none;
+
+            @include bp(1000px) {
+              display: block;
+            }
+            @include bp-1200 {
+              top: 783px;
+              left: calc(50% + 306px);
+            }
+        }
+        &.line-red {
+            top: 740px;
+            left: calc(50% + 574px);
+        }
+        &.bracket-blue {
+            top: 695px;
+            left: 100px;
+
+            @include bp-1200 {
+                top: 865px;
+                left: calc(50% + 112px);
+            }
+        }
+        &.d-quote-white-2 {
+            top: 934px;
+            left: calc(50% + 364px);
+        }
+        &.colon-white {
+            top: 880px;
+            left: calc(50% + 480px);
+        }
+        &.plus-blue-2 {
+            top: 905px;
+            left: calc(50% + 711px);
+        }
+        &.s-red-2 {
+            top: 1041px;
+            left: calc(50% + 13px);
+        }
+        &.exclamation-orange-2 {
+            top: 1057px;
+            left: calc(50% + 189px);
+        }
+        &.question-blue {
+            top: 1015px;
+            left: calc(50% + 501px);
+        }
+        &.colon-white-2 {
+            top: 1216px;
+            left: calc(50% - 51px);
+            display: none;
+
+            @include bp(1500px) {
+                display: block;
+            }
+        }
+        &.v-orange-down {
+            top: 1433px;
+            left: calc(50% - 101px);
+            display: none;
+
+            @include bp(1500px) {
+                display: block;
+            }
+        }
+    }
+}

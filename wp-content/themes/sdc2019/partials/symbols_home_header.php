@@ -1,0 +1,32 @@
+<div class="home-header-symbols">
+    <div class="container">
+        <div class="symbol plus"><?php home_header_symbol('plus'); ?></div>
+        <div class="symbol v-white"><?php home_header_symbol('v.white'); ?></div>
+        <div class="symbol s-blue"><?php home_header_symbol('s.blue'); ?></div>
+        <div class="symbol dollar-sign-orange"><?php home_header_symbol('dollar-sign.orange'); ?></div>
+        <div class="symbol d-quote-white"><?php home_header_symbol('d-quote.white'); ?></div>
+        <div class="symbol slash"><?php home_header_symbol('slash'); ?></div>
+        <div class="symbol question-red"><?php home_header_symbol('question.red'); ?></div>
+        <div class="symbol d-quote-blue"><?php home_header_symbol('d-quote.blue'); ?></div>
+        <div class="symbol s-red"><?php home_header_symbol('s.red'); ?></div>
+        <div class="symbol exclamation-red-short"><?php home_header_symbol('exclamation.red.short'); ?></div>
+        <div class="symbol bracket-white"><?php home_header_symbol('bracket.white'); ?></div>
+        <div class="symbol arc-red"><?php home_header_symbol('arc.red'); ?></div>
+        <div class="symbol colon-blue"><?php home_header_symbol('colon.blue'); ?></div>
+        <div class="symbol exclamation-orange"><?php home_header_symbol('exclamation.orange'); ?></div>
+        <div class="symbol exclamation-blue"><?php home_header_symbol('exclamation.blue'); ?></div>
+        <div class="symbol v-orange"><?php home_header_symbol('v.orange'); ?></div>
+        <div class="symbol v-white-down"><?php home_header_symbol('v.white.down'); ?></div>
+        <div class="symbol plus-blue"><?php home_header_symbol('plus.blue'); ?></div>
+        <div class="symbol line-red"><?php home_header_symbol('line.red'); ?></div>
+        <div class="symbol bracket-blue"><?php home_header_symbol('bracket.blue'); ?></div>
+        <div class="symbol d-quote-white-2"><?php home_header_symbol('d-quote.white.2'); ?></div>
+        <div class="symbol colon-white"><?php home_header_symbol('colon.white'); ?></div>
+        <div class="symbol plus-blue-2"><?php home_header_symbol('plus.blue.2'); ?></div>
+        <div class="symbol s-red-2"><?php home_header_symbol('s.red.2'); ?></div>
+        <div class="symbol exclamation-orange-2"><?php home_header_symbol('exclamation.orange.2'); ?></div>
+        <div class="symbol question-blue"><?php home_header_symbol('question.blue'); ?></div>
+        <div class="symbol colon-white-2"><?php home_header_symbol('colon.white.2'); ?></div>
+        <div class="symbol v-orange-down"><?php home_header_symbol('v.orange.down'); ?></div>
+    </div>
+</div>

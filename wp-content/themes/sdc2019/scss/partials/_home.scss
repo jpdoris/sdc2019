@@ -1,0 +1,333 @@
+.content-home {
+    margin-bottom: 100px;
+    @include bp-992 {
+        margin-bottom: 0;
+        position: fixed;
+        // bottom: 10px;
+        bottom: 43px;
+        width: 100%;
+    }
+    @include bp-1200 {
+        bottom: 20px;
+    }
+
+    &.cookie-policy-hidden {
+        bottom: 10px !important;
+    }
+    &.cookie-policy-shown {
+        bottom: 43px !important;
+        @include bp-1200 {
+            bottom: 20px !important;
+        }
+    }
+
+    @include bp-small-desktop {
+        position: static;
+    }
+
+    @include bp(1920px) {
+        max-width: 1920px;
+        left: calc((100% - 1920px) / 2);
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    #graphic-date-location-container {
+        padding-left: 30px;
+        padding-right: 30px;
+
+        margin-bottom: 1rem;
+
+        @include bp(360px) {
+            padding-left: 30px;
+            padding-right: 30px;
+        }
+
+        @include bp-992 {
+            padding-left: 80px;
+            padding-right: 0px;
+
+            margin-bottom: 0;
+        }
+
+        // @include bp(1460px) {
+        //     padding-left: 120px;
+        // }
+
+        #sdc19-graphic--container {
+            max-width: 121px;
+
+            @include bp(400px) {
+                max-width: 188px;
+            }
+
+            @include bp-576 {
+                max-width: 215px;
+            }
+
+            @include bp-768 {
+                max-width: 277px;
+            }
+
+            @include bp-992 {
+                max-width: none;
+            }
+
+            @media only screen and (min-width: $bp-992) and (-ms-high-contrast: active),
+            (-ms-high-contrast: none) {
+                max-width: 500px;
+                min-height: 1px;
+            }
+
+            #sdc19-graphic {
+                @include bp-992 {
+                    margin-bottom: 45px;
+                }
+            }
+        }
+
+        #date-location-container {
+            p {
+                margin-bottom: 0;
+                @include set-text(white, 14px, 1.14, samsungsharpsans-bold);
+
+                @include bp(400px) {
+                    font-size: 19px;
+                }
+
+                @include bp-576 {
+                    font-size: 25px;
+                }
+
+                @include bp-768 {
+                    font-size: 33px;
+                }
+
+                @include bp-1200 {
+                    font-size: 52px;
+                }
+
+                @include bp(1460px) {
+                    font-size: 64px;
+                }
+            }
+        }
+
+    }
+
+    .video-animation {
+        height: auto;
+        width: 100%;
+
+        &.video-animation__desktop {
+            max-width: 760px;
+
+            @include bp-992 {
+                padding-left: 4em;
+            }
+
+            @include bp-1200 {
+                padding-left: 8em;
+            }
+
+            @include bp(1920px) {
+                padding-left: 4em;
+            }
+        }
+    }
+
+    .info-container {
+        padding-left: 55px;
+        padding-right: 55px;
+
+        @include bp-992 {
+            // padding-left: 160px;
+            // padding-right: 160px;
+            padding-left: 80px;
+            padding-right: 80px;
+        }
+
+        // @include bp(1460px) {
+        //     padding-left: 120px;
+        //     padding-right: 120px;
+        // }
+    }
+
+    #presale-container,
+    #register-button-container {
+        width: 100%;
+    }
+
+    #signup-col {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    @include bp-992 {
+        #presale-container {
+            // width: 37%;
+            width: 29%;
+            padding-left: 15px;
+        }
+
+        #register-button-container {
+            // width: 32%;
+            width: 40%;
+            // padding-left: 3.5rem;
+            padding-left: 1.5rem;
+        }
+
+        #signup-col {
+            width: 31%;
+            padding-left: 10px;
+            margin-left: 0;
+            margin-right: 0;
+
+            #signup-col_inner {
+                height: 30px;
+                margin-top: 15px;
+            }
+        }
+    }
+    @include bp-1200 {
+      #signup-col {
+        padding-left: 20px;
+      }
+    }
+
+    @include bp(1460px) {
+        #presale-container {
+            width: 33%;
+        }
+        #register-button-container {
+            width: 36%;
+        }
+    }
+
+    @include bp(1785px) {
+        #presale-container {
+            width: 35%;
+        }
+        #register-button-container {
+            width: 34%;
+        }
+    }
+
+     @include bp(1920px) {
+      #presale-container {
+        // width: 40%;
+        width: 32%;
+      }
+      #register-button-container {
+        // width: 27%;
+        width: 35%;
+        padding-left: 3rem;
+      }
+      #signup-col {
+        width: 33%;
+      }
+
+    }
+
+    #presale-text {
+        @include set-text($cerulean, 23px, 1.174, samsungone-bold);
+
+        margin-top: 2rem;
+
+        @include bp-992 {
+            // font-size: 14px;
+            font-size: 13px;
+
+            margin-top: 0;
+        }
+
+        @include bp-1200 {
+            // font-size: 19px;
+            font-size: 16px;
+        }
+
+        @include bp(1460px) {
+            font-size: 23px;
+        }
+
+        @include bp(1785px) {
+            font-size: 31px;
+        }
+    }
+
+    #register-btn {
+        @include set-text($white, 20.26px, 1, samsungsharpsans-bold);
+        border-radius: 35px;
+        padding: 15px 35px;
+        border: 3px solid;
+
+        margin-top: 1rem;
+        margin-bottom: 2rem;
+
+        &:hover {
+            background-color: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+
+        @include bp-992 {
+            font-size: 13px;
+            padding: 15px 27px;
+
+            margin-top: 0;
+            margin-bottom: 0;
+        }
+
+        @include bp-1200 {
+            font-size: 18px;
+            padding: 15px 35px;
+        }
+
+        @include bp(1460px) {
+            font-size: 24px;
+            padding-left: 60px;
+            padding-right: 60px;
+        }
+    }
+
+    #signup-col {
+      min-height: 50px;
+  }
+
+  #signup-link {
+        // 2.038
+        @include set-text($white, 13.25px, 1, samsungone-bold);
+        border-bottom: 2px solid white;
+        padding-bottom: 5px;
+
+        @include bp-992 {
+            font-size: 13px;
+        }
+
+        @include bp-1200 {
+            // font-size: 17px;
+        font-size: 16px;
+        }
+
+        @include bp(1460px) {
+            font-size: 22px;
+        }
+    }
+
+    #signup-submission-text {
+        margin-bottom: 0;
+        @include set-text($white, 13.25px, 1.2, samsungone-bold);
+
+        @include bp-992 {
+            font-size: 13px;
+        }
+
+        @include bp-1200 {
+            font-size: 17px;
+        }
+
+        @include bp(1460px) {
+            font-size: 22px;
+        }
+    }
+}

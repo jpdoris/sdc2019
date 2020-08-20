@@ -1,0 +1,210 @@
+.content-page {
+	color: $black;
+	p {
+		color: $black;
+	}
+
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+section.module .page-module-heading {
+ margin-bottom:.5rem;
+ font-weight:500;
+ line-height:1.2;
+ color:inherit
+}
+.h1,
+h1,
+section.module .page-module-heading {
+ font-size:2.5rem
+}
+.h2,
+h2 {
+ font-size:2rem
+}
+.h3,
+h3 {
+ font-size:1.75rem
+}
+.h4,
+h4 {
+ font-size:1.5rem
+}
+.h5,
+h5 {
+ font-size:1.33333rem
+}
+.h6,
+h6 {
+ font-size:1rem
+}
+.h1, .h2, .h3, .h4, .h5, .h6, .mt-4, .my-4, body.registration-page .registration-item .registration-item-price, h1, h2, h3, h4, h5, h6, section.module .page-module-heading {
+
+    margin-top: 1.5rem !important;
+
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, .mb-4, .my-4, h1, h2, h3, h4, h5, h6, section.module .page-module-heading {
+
+    margin-bottom: 1.5rem !important;
+
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6, section.module .page-module-heading {
+
+    font-family: SamsungSharpSans,sans-serif;
+    font-weight: 700;
+
+}
+
+.font-size-12 {
+ font-size:.66667rem!important
+}
+.font-size-14,
+body.registration-page .registration-item .registration-item-disclaimer {
+ font-size:.77778rem!important
+}
+.font-size-16 {
+ font-size:.88889rem!important
+}
+.font-size-18 {
+ font-size:1rem!important
+}
+.font-size-20 {
+ font-size:1.11111rem!important
+}
+.font-size-24,
+body.registration-page .registration-item .registration-item-alert,
+body.registration-page .registration-item .registration-item-available-on {
+ font-size:1.33333rem!important
+}
+.font-size-26,
+.page-module-boxes .box-container .content .headline {
+ font-size:1.44444rem!important
+}
+.font-size-30 {
+ font-size:1.66667rem!important
+}
+.font-size-36,
+body.registration-page .registration-item .registration-item-price {
+ font-size:2rem!important
+}
+.font-size-48,
+body.registration-page .registration-item .registration-item-title {
+ font-size:2.66667rem!important
+}
+.font-size-64 {
+ font-size:3.55556rem!important
+}
+.font-size-80 {
+ font-size:4.44444rem!important
+}
+.font-samsung-sharp,
+.page-module-boxes .box-container .content .headline,
+.slider-controls,
+body.registration-page .registration-item .registration-item-alert,
+body.registration-page .registration-item .registration-item-price,
+body.registration-page .registration-item .registration-item-title,
+html .section .fullpage-module.module-slider .slider-captions .slider-caption-title,
+section.module .page-module-slider .slider-captions .slider-caption-title {
+ font-family:SamsungSharpSans,sans-serif
+}
+.font-samsung-one {
+ font-family:SamsungOne,sans-serif
+}
+@media (min-width:768px) and (max-width:1023.98px) {
+ .font-size-tablet-only-48 {
+  font-size:2.66667rem!important
+ }
+ .font-size-tablet-only-36 {
+  font-size:2rem!important
+ }
+ .font-size-tablet-only-20 {
+  font-size:1.11111rem!important
+ }
+}
+@media (max-width:767.98px) {
+ .font-size-mobile-only-12 {
+  font-size:.66667rem!important
+ }
+ .font-size-mobile-only-14 {
+  font-size:.77778rem!important
+ }
+ .font-size-mobile-only-16 {
+  font-size:.88889rem!important
+ }
+ .font-size-mobile-only-20 {
+  font-size:1.11111rem!important
+ }
+ .font-size-mobile-only-24 {
+  font-size:1.33333rem!important
+ }
+ .font-size-mobile-only-36 {
+  font-size:2rem!important
+ }
+ .mobile-hide {
+  display:none
+ }
+}
+@media (max-width:1023.98px) {
+ .font-size-mobile-40 {
+  font-size:2.22222rem!important
+ }
+ .font-size-mobile-36 {
+  font-size:2rem!important
+ }
+ .font-size-mobile-24 {
+  font-size:1.33333rem!important
+ }
+ .font-size-mobile-20 {
+  font-size:1.11111rem!important
+ }
+ .font-size-mobile-18 {
+  font-size:1rem!important
+ }
+ .font-size-mobile-16 {
+  font-size:.88889rem!important
+ }
+ .font-size-mobile-14 {
+  font-size:.77778rem!important
+ }
+ .font-size-mobile-12 {
+  font-size:.66667rem!important
+ }
+ .font-size-mobile-10 {
+  font-size:.55556rem!important
+ }
+ .font-size-mobile-8 {
+  font-size:.44444rem!important
+ }
+ .text-align-left-mobile {
+  text-align:left!important
+ }
+ .flex-mobile-column-reverse {
+  -webkit-box-orient:vertical;
+  -webkit-box-direction:reverse;
+  -ms-flex-direction:column-reverse;
+  flex-direction:column-reverse
+ }
+}
+@media (min-width:1024px) {
+ .font-size-desktop-only-24 {
+  font-size:1.33333rem
+ }
+ .font-size-desktop-only-36 {
+  font-size:2rem
+ }
+ .font-size-desktop-only-48 {
+  font-size:2.66667rem
+ }
+}
+}

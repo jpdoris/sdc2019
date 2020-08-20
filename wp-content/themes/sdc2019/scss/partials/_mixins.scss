@@ -1,0 +1,304 @@
+/**
+ * Convert PX to REMs.
+ */
+@function rem($px, $base: $base-font-size) {
+	@return ($px / $base) * 1rem;
+}
+
+// Breakpoint mixins
+// E.g
+// @include bp-1200{
+//   width: 600px;
+// }
+@mixin bp-576 {
+  @media only screen and (min-width: $bp-576) { @content; }
+}
+@mixin bp-768 {
+  @media only screen and (min-width: $bp-768) { @content; }
+}
+@mixin bp-992 {
+  @media only screen and (min-width: $bp-992) { @content; }
+}
+@mixin bp-1200 {
+  @media only screen and (min-width: $bp-1200) { @content; }
+}
+@mixin bp($min-width, $max-width: false) {
+  @if $max-width != false {
+    @media only screen and (min-width: $min-width) and (max-width: $max-width) { @content; }
+  }
+  @else {
+    @media only screen and (min-width: $min-width) { @content; }
+  }
+}
+@mixin bp-small-desktop {
+  @media screen and (min-width: $bp-992) and (max-height: 800px) { @content; }
+}
+@mixin bp-1920 {
+  @media only screen and (min-width: 1920px) { @content; }
+}
+
+// Font mixins.
+@mixin apply-font($font: samsungone) {
+  @if $font == samsungone {
+    font-family: "SamsungOne", sans-serif; font-weight: normal; font-style: normal;
+  }
+  @if $font == samsungone-bold {
+    font-family: "SamsungOne", sans-serif; font-weight: 400; font-style: normal;
+  }
+  @if $font == samsungone-black {
+    font-family: "SamsungOne", sans-serif; font-weight: 700; font-style: normal;
+  }
+  @if $font == samsungsharpsans-light {
+    font-family: "SamsungSharpSans", sans-serif; font-weight: 300; font-style: normal;
+  }
+  @if $font == samsungsharpsans {
+    font-family: "SamsungSharpSans", sans-serif; font-weight: normal; font-style: normal;
+  }
+  @if $font == samsungsharpsans-bold {
+    font-family: "SamsungSharpSans", sans-serif; font-weight: bold; font-style: normal;
+  }
+}
+
+// Set the most common text styles
+@mixin set-text($color, $size, $lineHeight, $family: samsungone, $textTransform: none, $letterSpacing: normal) {
+  @if $color !=false {
+    color: $color;
+  }
+  @if $size !=false {
+    font-size: $size;
+  }
+  @if $lineHeight !=false {
+    line-height: $lineHeight;
+  }
+  @if $family !=false {
+    @include apply-font($family);
+  }
+  @if $textTransform !=false {
+    text-transform: $textTransform;
+  }
+  @if $letterSpacing !=false {
+    letter-spacing: $letterSpacing;
+  }
+}
+
+@mixin font-smoothing() {
+	-webkit-font-smoothing : antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-smoothing         : antialiased;
+}
+
+@mixin do-transition($property, $duration: 1s, $function: ease, $delay: 0s) {
+	-webkit-transition: $property $duration $function $delay;
+	-moz-transition   : $property $duration $function $delay;
+	-o-transition     : $property $duration $function $delay;
+	transition        : $property $duration $function $delay;
+}
+
+@mixin box-shadow-1 {
+	-webkit-box-shadow: 0 0 6px 0 rgba(187,187,187,1);
+	-moz-box-shadow   : 0 0 6px 0 rgba(187,187,187,1);
+	box-shadow        : 0 0 6px 0 rgba(187,187,187,1);
+	border-radius     : 1px; //ios safari fix
+}
+
+// Docs: http://apps.eky.hk/css-triangle-generator/
+@mixin get-triangle($color, $direction: 'down', $height: 9px, $widthMod: 2) {
+  width       : 0;
+  height      : 0;
+  border-style: solid;
+  @if $direction=='up' {
+    border-width: 0 ($height/$widthMod) $height ($height/$widthMod);
+    border-color: transparent transparent $color transparent;
+  }
+  @if $direction=='down' {
+    border-width: $height ($height/$widthMod) 0 ($height/$widthMod);
+    border-color: $color transparent transparent transparent;
+  }
+  @if $direction=='left' {
+    border-width: ($height/$widthMod) $height ($height/$widthMod) 0;
+    border-color: transparent $color transparent transparent;
+  }
+  @if $direction=='right' {
+    border-width: ($height/$widthMod) 0 ($height/$widthMod) $height;
+    border-color: transparent transparent transparent $color;
+  }
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+      @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+      @content;
+  }
+  @-ms-keyframes #{$animation-name} {
+      @content;
+  }
+  @-o-keyframes #{$animation-name} {
+      @content;
+  }
+  @keyframes #{$animation-name} {
+      @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation   : #{$str};
+  -ms-animation    : #{$str};
+  -o-animation     : #{$str};
+  animation        : #{$str};
+}
+
+@mixin appearance-be-gone() {
+  -webkit-appearance: none;
+  -moz-appearance   : none;
+  appearance        : none;
+}
+
+@mixin hide-text {
+  text-indent: 200%;
+  white-space: nowrap;
+  overflow   : hidden;
+}
+
+@mixin add-linear-gradient($start, $end) {
+  background: -webkit-linear-gradient($start, $end); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient($start, $end); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient($start, $end); /* For Firefox 3.6 to 15 */
+  background: linear-gradient($start, $end); /* Standard syntax */
+}
+
+@mixin css-gradient($from: #dfdfdf, $to: #f8f8f8) {
+	background-color: $to;
+	background-image: -webkit-gradient(linear, left top, left bottom, from($from), to($to));
+	background-image: -webkit-linear-gradient(top, $from, $to);
+	background-image: -moz-linear-gradient(top, $from, $to);
+	background-image: -o-linear-gradient(top, $from, $to);
+	background-image: linear-gradient(to bottom, $from, $to);
+}
+
+@mixin box-sizing($type: border-box) {
+	-webkit-box-sizing: $type;
+	-moz-box-sizing   : $type;
+	-ms-box-sizing    : $type;
+	box-sizing        : $type;
+}
+
+// Common ratios: 21:9, 16:9, 4:3, 1:1
+// @include aspect-ratio(16, 9);
+@mixin aspect-ratio($numerator, $denominator) {
+  .aspect-ratio-#{$numerator}by#{$denominator} {
+    position: relative;
+    display : block;
+    width   : 100%;
+    padding : 0;
+    overflow: hidden;
+
+    &:after {
+      content    : '';
+      display    : block;
+      padding-top: percentage($denominator / $numerator);
+    }
+
+    > div, > img, > iframe {
+      position: absolute !important;
+      top     : 0 !important;
+      left    : 0 !important;
+      right   : 0 !important;
+      bottom  : 0 !important;
+      width   : 100% !important;
+      height  : 100% !important;
+      border  : 0;
+    }
+  }
+}
+
+@mixin max-width($max-width) {
+  max-width   : $max-width;
+  margin-left : auto;
+  margin-right: auto;
+}
+
+@mixin placeholder-color($color) {
+  &::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+    color: $color;
+  }
+  &::-moz-placeholder { /* Firefox 19+ */
+    color: $color;
+  }
+  &:-ms-input-placeholder { /* IE 10+ */
+    color: $color;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: $color;
+  }
+}
+
+@mixin select-reset {
+  border            : none;
+  box-shadow        : none;
+  background-color  : transparent;
+  background-image  : none;
+  -webkit-appearance: none;
+  -moz-appearance   : none;
+  appearance        : none;
+  &:focus {
+    outline: none;
+  }
+  // Hides down arrow for IE10+
+  &::-ms-expand {
+    display: none;
+  }
+}
+
+@mixin button-reset {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin overflow-scrolling() {
+  overflow-y                : scroll;
+  -webkit-overflow-scrolling: touch;
+}
+
+@mixin bgi($img) {
+  background-image: url('#{$img-path}#{$img}');
+}
+
+@mixin set-bg($img, $size: 'contain', $position: 'center', $repeat: 'no-repeat') {
+  @include bgi($img);
+  background-size    : $size;
+  background-position: $position;
+  background-repeat  : $repeat;
+}
+
+@mixin home-anim($from: 40px) {
+    opacity: 0;
+    -webkit-transform: translateY($from);
+    -moz-transform: translateY($from);
+    -ms-transform: translateY($from);
+    -o-transform: translateY($from);
+    transform: translateY($from);
+    -webkit-transition: all 0.6s ease-out;
+    -moz-transition: all 0.6s ease-out;
+    -ms-transition: all 0.6s ease-out;
+    -o-transition: all 0.6s ease-out;
+    transition: all 0.6s ease-out;
+
+    &.anim-visible {
+        opacity: 1;
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none;
+    }
+}

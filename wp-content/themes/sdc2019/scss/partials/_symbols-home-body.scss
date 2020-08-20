@@ -1,0 +1,181 @@
+.home-body-symbols {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: none;
+
+    @include bp-768 {
+        display: block;
+    }
+
+    .container {
+        max-width: 1700px;
+        height: 100%;
+        position: relative;
+        z-index: 1;
+    }
+
+    .symbol {
+        position: absolute;
+
+        &.bracket-blue {
+            top: 460px;
+            right: 30px;
+
+            @include bp-768 {
+                top: 0;
+            }
+            @include bp(1300px) {
+                top: 160px;
+            }
+        }
+        &.line-yellow {
+            top: 603px;
+            left: calc(50% + 230px);
+
+            @include bp(1300px) {
+              top: 450px;
+            }
+            @include bp(1920px) {
+              top: 480px;
+            }
+        }
+        &.quote-red {
+            top: 700px;
+            left: 30px;
+
+            @include bp(1300px) {
+                top: 735px;
+            }
+        }
+        &.s-blue {
+            top: 1150px;
+            left: 180px;
+
+            @include bp(1300px) {
+                top: 1200px;
+            }
+            @include bp(1920px) {
+                top: 1000px;
+            }
+        }
+        &.exclamation-yellow {
+            top: 1382px;
+            right: 168px;
+        }
+        &.plus-red {
+            top: 1731px;
+            left: 311px;
+
+            @include bp(1300px) {
+                top: 1931px;
+            }
+            @include bp(1920px) {
+                top: 2231px;
+            }
+        }
+        &.d-blue {
+            top: 1710px;
+            right: 173px;
+
+            @include bp(1300px) {
+                top: 1779px;
+            }
+            @include bp(1920px) {
+                top: 1979px;
+            }
+        }
+        &.c-yellow {
+            top: 2325px;
+            left: 0;
+
+            @include bp(1300px) {
+                top: 2325px;
+            }
+            @include bp(1920px) {
+                top: 2725px;
+            }
+        }
+        &.v-blue {
+            top: 2995px;
+            left: 170px;
+
+            @include bp(1300px) {
+                top: 2795px;
+            }
+            @include bp(1920px) {
+                top: 3295px;
+            }
+        }
+        &.line-red {
+            top: 3352px;
+            right: 230px;
+
+            @include bp(1300px) {
+                top: 2852px;
+            }
+            @include bp(1920px) {
+                top: 3352px;
+            }
+        }
+
+        &:not(.view-in) {
+            svg path {
+                fill: white;
+            }
+        }
+
+        svg {
+            width: 40%;
+            height: auto;
+
+            @include bp-992 {
+                width: 60%;
+            }
+            @include bp-1200 {
+                width: auto;
+            }
+
+            path {
+                transition: fill .5s;
+            }
+        }
+    }
+}
+
+.home-body-symbols-sm {
+
+    @include bp-768 {
+        display: none;
+    }
+
+    svg {
+        position: absolute;
+
+        &:first-child {
+            right: 0;
+            top: 0;
+            left: auto;
+            bottom: auto;
+        }
+        &:last-child {
+            left: 0;
+            top: 60px;
+            right: auto;
+            bottom: auto;
+        }
+    }
+
+    &.is-top {
+        svg {
+            top: -64px;
+            right: 30px;
+            left: auto;
+            bottom: auto;
+        }
+    }
+}

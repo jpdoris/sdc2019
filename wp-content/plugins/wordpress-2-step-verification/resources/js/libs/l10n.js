@@ -1,0 +1,1 @@
+export default wp2sv_setup.l10n;

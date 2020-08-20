@@ -1,0 +1,773 @@
+.content-getting-here {
+    color: $black;
+
+    p {
+        color: $black;
+    }
+
+    .location-information {
+        max-width: 1700px;
+        padding-left: 37px;
+        padding-right: 37px;
+
+        .location-information__name-address-col {
+            @include bp-992 {
+                padding-right: 85px;
+            }
+        }
+
+        p {
+            text-align: center;
+
+            @include bp-992 {
+                text-align: right;
+            }
+        }
+
+        .location-information__name {
+            @include set-text($black, 24px, 32px, samsungsharpsans-bold);
+
+            @include bp-992 {
+                font-size: 43px;
+                line-height: 56px;
+            }
+            @include bp-1920 {
+                font-size: 62px;
+                line-height: 80px;
+            }
+        }
+
+        .location-information__address {
+            p {
+                @include set-text($black, 14px, 16px, samsungone-black);
+                margin-bottom: 0;
+
+                @include bp-992 {
+                    font-size: 24px;
+                    line-height: 34px;
+                }
+
+                @include bp-1920 {
+                    font-size: 34px;
+                    line-height: 48px;
+                }
+            }
+        }
+    }
+
+    #convention-center-map-container {
+        box-shadow: 0 6px 13px -12px black;
+        height: 340px;
+        position: relative;
+
+        @include bp(608px) {
+            height: 360px;
+        }
+
+        @include bp-992 {
+            height: 477px;
+        }
+
+        #convention-center-map {
+            height: 100%;
+            z-index: 1;
+            position: relative;
+        }
+
+        .map-label {
+            z-index: 2;
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: white;
+            padding: 15px 60px 0 15px;
+            @include bp(608px) {
+                padding: 15px 120px 0 15px;
+            }
+            h4 {
+                @include set-text($black, 12px, 12px, samsungone-black);
+                margin-bottom: 10px;
+            }
+            p {
+                @include set-text($dove-gray, 10px, 11px, samsungone-black);
+                text-align: left;
+            }
+            p a {
+                color: $toreabay;
+            }
+            .directions {
+                position: absolute;
+                top: 5px;
+                right: 15px;
+                text-align: center;
+                @include set-text($toreabay, 10px, 11px, samsungone-black);
+                img {
+                    margin: 10px auto;
+                }
+            }
+        }
+    }
+
+    .section__title {
+        @include set-text($black, 24px, 29px, samsungsharpsans-bold);
+        text-align: center;
+
+        @include bp-992 {
+            font-size: 62px * .70;
+            line-height: 74px * .70;
+        }
+
+        @include bp-1920 {
+            font-size: 62px;
+            line-height: 74px;
+        }
+    }
+
+    .hotels-section {
+        position: relative;
+        margin-top: 55px;
+
+        @include bp-992 {
+            margin-top: 147px;
+        }
+
+        .hotels-section__nav-container {
+            pointer-events: none;
+            @include bp-1200 {
+                max-width: 1650px;
+            }
+
+            .hotels-section__nav-container__btn-col {
+                pointer-events: auto;
+                @include bp-1200 {
+                    padding-left: 17px;
+                }
+            }
+
+            position: absolute;
+            z-index: 1;
+            top: 30px;
+            left: 0;
+            right: 0;
+
+            &.hotel-map-view-enabled {
+                .hotels-section__section__title__wrap {
+                    display: inline-block;
+                    background-color: white;
+                    border-radius: 5px;
+                }
+            }
+
+            .hotels-section__section__title__wrap {
+                padding: 2px 11px;
+
+                @include bp-992 {
+                    padding: 2px 25px;
+                }
+            }
+
+            @media all and (min--moz-device-pixel-ratio:0) and (min-resolution: 3e1dpcm) {
+                .section__title {
+                    line-height: normal;
+                    padding-top: 10px;
+                    @include bp-992 {
+                        padding-top: 15px;
+                    }
+                }
+            }
+            .section__title {
+                margin-bottom: 0;
+                font-size: 19px;
+
+                @include bp(400px) {
+                    font-size: 24px;
+                }
+
+                @include bp-992 {
+                    font-size: 62px * .70;
+                }
+
+                @include bp-1920 {
+                    font-size: 62px;
+                }
+
+            }
+
+            .hotels-section__change-view-btn__container {
+                display: inline-block;
+                background-color: white;
+                padding: 5px 11px;
+                border-radius: 5px;
+
+                @include bp-992 {
+                    padding: 10px 17px;
+                }
+                @include bp-1200 {
+                    // padding-left: 33px;
+                }
+            }
+
+            .hotels-section__change-view-btn {
+                @include button-reset();
+                vertical-align: middle;
+                background-size: contain;
+                background-repeat: no-repeat;
+
+                &:first-child {
+                    margin-right: 15px;
+                }
+
+                &.hotels-section__slider-view-btn {
+                    background-image: url('#{$img-path}slider-icon.svg');
+
+                    width: 24px;
+                    height: 14px;
+
+                    @include bp(400px) {
+                        width: 31px;
+                        height: 22px;
+                    }
+
+                    @include bp-992 {
+                        width: 63px;
+                        height: 37px;
+                    }
+
+                    &.active {
+                        background-image: url('#{$img-path}slider-icon-active.svg');
+                    }
+                }
+
+                &.hotels-section__map-view-btn {
+                    background-image: url('#{$img-path}map-icon.svg');
+                    background-size: contain;
+
+                    width: 12px;
+                    height: 17px;
+
+                    @include bp(400px) {
+                        width: 16px;
+                        height: 22px;
+                    }
+
+                    @include bp-992 {
+                        width: 29px;
+                        height: 40px;
+                    }
+
+                    &.active {
+                        background-image: url('#{$img-path}map-icon-active.svg');
+                    }
+                }
+            }
+        }
+
+
+        $slide-sm: 272px;
+        $slide-md: 550px;
+        $slide-lg: 668px;
+
+        .hotels-slick-slider {
+            padding-top: 80px;
+
+            @include bp-992 {
+                padding-top: 130px;
+            }
+
+            @include bp(1470px) {
+                padding-bottom: 75px;
+            }
+
+            @include bp-1920 {
+                padding-top: 145px;
+            }
+
+            .slick-slide {
+
+                // Center slide styles.
+                &.slick-center {
+                    .hotels-slide {
+                        img {
+                            height: $slide-sm;
+
+                            @include bp-768 {
+                                height: $slide-md;
+                            }
+
+                            @include bp-992 {
+                                height: $slide-lg;
+                            }
+                        }
+
+                        .hotel-info {
+                            display: block;
+                        }
+                    }
+                }
+            }
+
+            .hotels-slide {
+                margin: 0 12px;
+                position: relative;
+                vertical-align: middle;
+                max-width: $slide-sm;
+
+                @include bp-768 {
+                    margin: 0 40px;
+                    max-width: $slide-md;
+                }
+
+                @include bp-992 {
+                    max-width: $slide-lg;
+                }
+
+                @include bp-1200 {
+                    margin: 0 60px;
+                }
+
+                @include bp(1460px) {
+                    margin: 0 127px;
+                }
+
+                .img-outer {
+                    height: $slide-sm;
+                    width: $slide-sm;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    @include bp-768 {
+                        height: $slide-md;
+                        width: $slide-md;
+                    }
+
+                    @include bp-992 {
+                        height: $slide-lg;
+                        width: $slide-lg;
+                    }
+                }
+
+                img {
+                    display: block;
+                    width: auto;
+                    max-height: 100%;
+                    height: 227px;
+                    transition: height .4s;
+
+                    @include bp-768 {
+                        height: 472px;
+                    }
+
+                    @include bp-992 {
+                        height: 573px;
+                    }
+                }
+
+                .hotel-info {
+                    display: none;
+                    width: 100%;
+                    margin: 63px auto 0;
+                    position: relative;
+                    z-index: 1;
+                    text-align: center;
+
+                    @include bp(1470px) {
+                        max-width: 460px;
+                        margin: 0;
+                        position: absolute;
+                        padding: 70px;
+                        top: 50%;
+                        left: calc(100% - 60px);
+                        transform: translateY(-50%);
+
+                        text-align: left;
+                        background-color: $toreabay;
+                        padding: 62px;
+                    }
+
+                    h3 {
+                        @include set-text($black, 24px, 29px, samsungone-black);
+                        margin-bottom: 10px;
+
+
+                        @include bp(1470px) {
+                            color: $white;
+                            font-size: 40px * .7;
+                            line-height: 53px * .7;
+
+                            margin-bottom: 35px;
+                        }
+
+                        @include bp-1920 {
+                            font-size: 40px;
+                            line-height: 53px;
+                        }
+                        a {
+                            color: black;
+                            &:hover {
+                              text-decoration: underline;
+                            }
+                            @include bp(1470px) {
+                                color: white;
+                            }
+                        }
+                    }
+
+                    p {
+                        @include set-text($black, 10px, 16px, samsungone);
+                        margin-bottom: 0;
+
+                        @include bp-768 {
+                            font-size: 22px * .7;
+                            line-height: 30px * .7;
+                        }
+
+                        @include bp-1920 {
+                            font-size: 22px;
+                            line-height: 40px;
+                        }
+
+                        @include bp(1470px) {
+                            color: $white;
+                        }
+
+                        a {
+                          color: black;
+                          &:hover {
+                            text-decoration: underline;
+                          }
+
+                          @include bp(1470px) {
+                            color: white;
+                          }
+                        }
+
+                    }
+                    .hotel-info__desc {
+                        .hotel-info__desc__ad2 {
+                            margin-bottom: 15px;
+                            @include bp(1470px) {
+                                margin-bottom: 30px;
+                            }
+                        }
+                        .hotel-info__desc__phone {
+                            margin-bottom: 20px;
+                            @include bp(1470px) {
+                                margin-bottom: 30px;
+                            }
+                        }
+                        .hotel-info__desc__special_rates {
+                            font-size: 8px;
+                            @include bp-768 {
+                                font-size: 18px * .7;
+                            }
+                            @include bp-1920 {
+                                font-size: 18px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            ul.slick-dots {
+                list-style-type: none;
+                margin: 0;
+                padding: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: absolute;
+                // bottom: -80px;
+                bottom: auto;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 9;
+
+                top: $slide-sm + 110px;
+
+                @include bp-768 {
+                    top: $slide-md + 110px;
+                }
+
+                @include bp-992 {
+                    top: $slide-lg + 148px;
+                }
+
+                @include bp(1470px) {
+                    top: auto;
+                    bottom: 0;
+                }
+
+                li {
+                    margin: 0 10px 0 0;
+                    padding: 0;
+                    font-size: 0;
+                    line-height: 0;
+                    width: auto;
+                    height: auto;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+
+                    @include bp-768 {
+                        margin: 0 22px 0 0;
+
+                        &:last-child {
+                            margin-right: 0;
+                        }
+                    }
+
+                    &.slick-active {
+
+                        button {
+                            background-color: $denim;
+                        }
+                    }
+
+                    button {
+                        @include hide-text;
+                        width: 6px;
+                        height: 6px;
+                        border-radius: 50%;
+                        background-color: $timberwolf;
+                        border: none;
+                        backface-visibility: hidden;
+                        padding: 0;
+                        margin: 0;
+                        display: inline-block;
+                        vertical-align: middle;
+
+                        @include bp-768 {
+                            width: 13px;
+                            height: 13px;
+                        }
+
+                        &:focus {
+                            outline: none;
+                        }
+
+                        &:before {
+                            display: none;
+                        }
+                    }
+                }
+            }
+        }
+
+        #hotels-map-view {
+            height: 600px;
+            @include bp(1500px) {
+                height: 1080px;
+            }
+
+            #hotelsMap {
+                height: 100%;
+
+                .infowindow-content-container {
+                    padding: 10px 37px 10px 25px;
+
+                    @include bp-992 {
+                        padding: 40px 69px 30px 57px;
+                    }
+
+                    .hotel-data__name {
+                        @include set-text($black, 24px, 29px, samsungone-black);
+
+                        @include bp-992 {
+                            font-size: 44px * .7;
+                            line-height: 53px * .7;
+                        }
+
+                        @include bp-1920 {
+                            font-size: 44px;
+                            line-height: 53px;
+                        }
+                        a {
+                            color: black;
+                            &:hover {
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+
+                    .hotel-data__desc {
+                        p {
+                            @include set-text($black, 10px, 12px, samsungone-bold);
+
+                            @include bp-992 {
+                                font-size: 24px * .7;
+                                line-height: 40px * .7;
+                            }
+
+                            @include bp-1920 {
+                                font-size: 24px;
+                                line-height: 40px;
+                            }
+
+                            &:last-child {
+                                margin-bottom: 0;
+                            }
+                            &.hotel-data__desc__ad1,
+                            &.hotel-data__desc__distance {
+                                margin-bottom: 0;
+                            }
+                            a {
+                                color: black;
+                                &:hover {
+                                  text-decoration: underline;
+                                }
+                            }
+                        }
+                        .hotel-info__desc__special_rates {
+                            font-size: 8px;
+                            @include bp-992 {
+                                font-size: 19px * .7;
+                            }
+                            @include bp-1920 {
+                                font-size: 19px;
+                            }
+                        }
+                    }
+                }
+
+                .gm-style-iw-t {
+                    &::after {
+                        display: none;
+                    }
+
+                    .gm-style-iw-c {
+                        border-radius: 0;
+                        box-shadow: 0 2px 18px 4px rgba(0, 0, 0, 0.3);
+                    }
+                }
+            }
+        }
+    }
+
+    .transportation-section {
+        margin-top: 115px;
+
+        @include bp-992 {
+            margin-top: 83px;
+        }
+
+        .section__title {
+            margin-bottom: 35px;
+
+            @include bp-992 {
+                margin-bottom: 95px;
+            }
+        }
+
+        .transportation-section__container {
+            margin-bottom: 64px;
+
+            @include bp-992 {
+                margin-bottom: 160px;
+            }
+        }
+
+        #transportationTab {
+            border-bottom: none;
+
+            .nav-item {
+                @include bp-992 {
+                    &:first-child {
+                        .nav-link {
+                            padding-left: 0;
+                        }
+                    }
+                }
+
+                padding-right: 25px;
+                &#nav-item__bus {
+                    padding-right: 22px;
+                }
+                &#nav-item__parking {
+                    padding-right: 10px;
+                }
+
+                &:last-child {
+                    padding-right: 0;
+                }
+
+                .nav-link {
+                    border: none;
+
+                    &.active {
+                        border: none;
+                    }
+
+                    background-repeat: no-repeat;
+                    background-size: contain;
+
+                    &#tab-plane {
+                        width: 34px;
+                        height: 34px;
+                        background-image: url('#{$img-path}transportation-plane.svg');
+
+                        &.active {
+                            background-image: url('#{$img-path}transportation-plane-active.svg');
+                        }
+                    }
+
+                    &#tab-bus {
+                        width: 23px;
+                        height: 29px;
+                        background-image: url('#{$img-path}transportation-bus.svg');
+
+                        &.active {
+                            background-image: url('#{$img-path}transportation-bus-active.svg');
+                        }
+                    }
+
+                    &#tab-parking {
+                        width: 21px;
+                        height: 29px;
+                        background-image: url('#{$img-path}transportation-parking.svg');
+
+                        &.active {
+                            background-image: url('#{$img-path}transportation-parking-active.svg');
+                        }
+                    }
+
+                    &#tab-bicycle {
+                        width: 47px;
+                        height: 29px;
+                        background-image: url('#{$img-path}transportation-bicycle.svg');
+
+                        &.active {
+                            background-image: url('#{$img-path}transportation-bicycle-active.svg');
+                        }
+                    }
+                }
+            }
+        }
+
+        .tab-content {
+            margin-top: 35px;
+            padding-right: 15px;
+            padding-left: 15px;
+            @include bp-992 {
+                padding-left: 0;
+                // padding-right: 0;
+            }
+            .tab-pane {
+                p {
+                    @include set-text($black, 10px, 16px, samsungone);
+
+                    @include bp-992 {
+                        font-size: 22px * .7;
+                        line-height: 40px * .7;
+                    }
+
+                    @include bp-1920 {
+                        font-size: 22px;
+                        line-height: 40px;
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,234 @@
+footer.footer-home-launch {
+    position: absolute;
+    bottom: -80px;
+    background: #000;
+
+    @include bp-1200 {
+        bottom: 0;
+        text-align: center;
+    }
+
+    @include bp(1920px) {
+        left: calc((100% - 1920px) / 2);
+    }
+
+    text-align: left;
+
+    width: 100%;
+    max-width: 1920px;
+    margin-left: auto;
+    margin-right: auto;
+
+    #footer-launch__subscribe-text {
+        @include set-text($cerulean, 10px, 24px, samsungone-black);
+        padding-top: 2px;
+        margin-bottom: 0;
+
+        @include bp-992 {
+            font-size: 14px;
+            line-height: 21px;
+        }
+
+        @include bp-1200 {
+            font-size: 17px;
+        }
+    }
+
+    #mc_embed_signup {
+        max-width: 151px;
+
+        @include bp-992 {
+            max-width: 220px;
+        }
+
+        #mc_embed_signup_scroll {
+            #mce-EMAIL {
+                color: $white;
+                font-size: 10px;
+                min-width: 119px;
+                @include placeholder-color($white);
+
+                @include bp-992 {
+                    font-size: 13px;
+                    line-height: 21px;
+                }
+
+                @include bp-1200 {
+                    font-size: 17px;
+                }
+            }
+        }
+    }
+
+    #mc_embed_signup__response {
+        min-height: 44px;
+        text-align: left;
+        padding-left: 0;
+
+        @include bp-992 {
+            margin-left: 0;
+        }
+
+        #mc_embed_signup__response__inner {
+            .mc-field-group__email__errors {
+                @include bp-1200 {
+                    padding-left: 0;
+                }
+            }
+
+            #mce-responses {}
+        }
+    }
+
+    @include bp-1200 {
+        .hashtag-menu-col {
+            flex: 0 0 82%;
+            max-width: 82%;
+
+            .hashtag-menu-col__hashtag-col {
+                flex: 0 0 20%;
+                max-width: 20%;
+            }
+
+            .hashtag-menu-col__menu-col {
+                flex: 0 0 80%;
+                max-width: 80%;
+            }
+        }
+
+        .social-container-col {
+            flex: 0 0 18%;
+            max-width: 18%;
+        }
+    }
+
+    @include bp(1399px) {
+        .hashtag-menu-col {
+            flex: 0 0 80%;
+            max-width: 80%;
+        }
+
+        .social-container-col {
+            flex: 0 0 20%;
+            max-width: 20%;
+        }
+    }
+
+    .hashtag {
+        @include set-text($white, 24px, 29px, samsungsharpsans-bold);
+
+        @include bp-992 {
+            @include set-text($white, 36px, 44px, samsungsharpsans-bold);
+        }
+
+        @include bp-1200 {
+            @include set-text($white, 44px, 52px, samsungsharpsans-bold);
+        }
+
+        @include bp(1820px) {
+            @include set-text($white, 66px, 79px, samsungsharpsans-bold);
+        }
+    }
+
+    #menu-footer-col-1 {
+        margin: 16px auto;
+
+        @include bp-992 {
+            margin: 0 auto 30px 0;
+        }
+
+        li {
+            white-space: nowrap;
+            color: $white;
+            @include set-text($white, 10px, 24px, samsungone);
+
+            @include bp-992 {
+                @include set-text($white, 12px, 24px, samsungone);
+            }
+
+            @include bp-1200 {
+                @include set-text($white, 14px, 24px, samsungone);
+
+                &:before {
+                    content: "|";
+                    display: inline;
+                }
+
+                &:first-of-type:before {
+                    content: "";
+                }
+            }
+
+            @include bp(1820px) {
+                font-size: 22px;
+                line-height: 26px;
+            }
+
+            .nav-link {
+                display: inline;
+                text-decoration: underline;
+                @include set-text($white, 10px, 24px, samsungone);
+
+                @include bp-992 {
+                    font-size: 12px;
+                    // @include set-text($white, 12px, 24px, samsungone);
+                }
+
+                @include bp-1200 {
+                    font-size: 14px;
+                    // @include set-text($white, 14px, 24px, samsungone);
+                    text-decoration: none;
+                }
+
+                @include bp(1300px) {
+                    font-size: 16px;
+                }
+
+                @include bp(1500px) {
+                    font-size: 18px;
+                }
+
+                @include bp(1600px) {
+                    font-size: 20px;
+                }
+
+                @include bp(1700px) {
+                    font-size: 22px;
+                }
+
+                @include bp(1820px) {
+                    font-size: 22px;
+                    line-height: 26px;
+                    // @include set-text($white, 22px, 26px, samsungone);
+                }
+            }
+        }
+    }
+
+    nav {
+        padding: 0.5rem 30px;
+
+        .social-container {
+
+            #social-links {
+                li {
+                    list-style: none;
+                    display: inline;
+                    padding: 0 5%;
+
+                    &:first-of-type {
+                        padding-left: 0;
+                    }
+
+                    @include bp-1200 {
+                        padding: 10px 5px;
+                    }
+                }
+
+                @include bp-1200 {
+                    text-align: right;
+                }
+            }
+        }
+    }
+}

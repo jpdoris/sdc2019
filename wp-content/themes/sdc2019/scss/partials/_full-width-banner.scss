@@ -1,0 +1,13 @@
+.partial-full_width_banner {
+  background-size: cover;
+  height: 22px;
+  margin-bottom: 48px;
+  margin-top: 63px;
+  @include bp-576 {
+    margin-top: 79.8px;
+  }
+  @include bp-768 {
+    height: 120px;
+    margin-bottom: 104px;
+  }
+}

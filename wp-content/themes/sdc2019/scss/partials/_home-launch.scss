@@ -1,0 +1,268 @@
+.content-samsung-developer-conference-home-launch {
+    max-width: none;
+    position: static;
+    margin-bottom: 280px;
+    /* prevent overlapping sticky footer */
+
+    .container {
+        padding-left: 30px;
+        padding-right: 30px;
+        max-width: none;
+    }
+
+    img {
+        display: inline-block;
+    }
+
+    .hero-wrapper {
+        background: $black url(#{$img-path}bg-blue-bar-mobile.png) repeat-x bottom left;
+        padding-top: 60px;
+        position: relative;
+
+        .content-hero-box {
+            max-width: 1680px;
+            position: relative;
+            z-index: 1;
+
+            @include bp(1100px) {
+                max-width: 1100px;
+            }
+
+            @include bp(1920px) {
+                max-width: 1680px;
+            }
+
+            .section-hero {
+                img {
+                    width: 571px;
+                }
+
+                @include bp(1920px) {
+                    img {
+                        width: auto;
+                    }
+                }
+            }
+        }
+
+        .content-experience {
+            // max-width: 1680px;
+            max-width: 1100px;
+            background: url(#{$img-path}cerulean-trapezoid-mobile.svg) right 30px top 80px no-repeat;
+            padding: 30px 15px 40px 30px;
+            margin-top: 75px;
+            position: relative;
+            z-index: 1;
+            
+            @include bp-768 {
+              background: url(#{$img-path}cerulean-trapezoid-mobile.svg) right 30px top 40px no-repeat;
+            }
+
+            /* testing anti-semantic ordering */
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            /* end test */
+
+            .experience-wrapper {
+                max-width: 292px;
+                position: relative;
+                text-align: center;
+                background: $white;
+                margin: 0 30px 60px auto;
+                padding: 10px 30px 30px 30px;
+
+                h2 {
+                    @include set-text($black, 26px, 32px, samsungsharpsans-bold);
+                    padding: 20px;
+                }
+
+                p {
+                    @include set-text($black, 14px, 18px, samsungone);
+                }
+
+                .img-left-inline {
+                    text-align: left;
+                    display: inline;
+                    margin-right: 6px;
+                }
+
+                .experience-cta {
+                    .experience-cta__btn {
+                        background-color: transparent;
+                        text-align: right;
+                        border: none;
+                        @include set-text($black, 12px, 16px, samsungone);
+
+                        &.experience-cta__mobileBtn {
+                            img {
+                                width: 24px;
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .character-man {
+                position: relative;
+                padding-right: 40%;
+
+                img {
+                    max-height: 300px;
+                }
+            }
+        }
+    }
+
+    #videoModal {
+        .modal-dialog {
+            max-width: 1000px;
+
+            @include bp-768 {
+                width: 75%;
+            }
+
+            .modal-content {
+                background: 0 0;
+                border: none;
+                border-radius: 0;
+
+                .modal-header {
+                    border-bottom: none;
+
+                    button.close {
+                        color: white;
+                        opacity: 1;
+                        font-size: 35px;
+                        padding-bottom: 0;
+                    }
+                }
+
+                .modal-body {
+                    width: 100%;
+                    padding: 0;
+
+                    @include bp-768 {
+                        padding: 1rem 0 0 0;
+                    }
+
+                    iframe {
+                        width: 100% !important;
+                    }
+                }
+            }
+        }
+    }
+
+    @include bp-768 {
+        width: 100%;
+
+        .hero-wrapper {
+            .content-experience {
+                margin-top: 275px;
+                background-size: auto 61%;
+
+                .experience-wrapper {
+                    text-align: left;
+                    max-width: 494px;
+                    padding: 42px 49px 42px 56px;
+
+                    h2 {
+                        @include set-text($black, 43px, 56px, samsungsharpsans-bold);
+                        padding: 0 0 40px 0;
+                    }
+
+                    p {
+                        @include set-text($black, 21px, 27px, samsungone);
+                        margin-bottom: 40px;
+                    }
+
+                    .experience-cta {
+                        .experience-cta__btn {
+                            font-size: 30px;
+                            line-height: 40px;
+
+                            img {
+                                width: 28px;
+                                margin-right: 16px;
+                            }
+
+                            img,
+                            span {
+                                vertical-align: middle;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include bp-1200 {
+        .hero-wrapper {
+            background: $black url(#{$img-path}bg-blue-bar.png) repeat-x bottom left;
+            // padding-top: 145px;
+
+            .content-experience {
+                background: url(#{$img-path}cerulean-trapezoid.svg) right -115px top 60px no-repeat;
+                background-size: 62% 85%;
+
+                .experience-wrapper {
+                    margin-right: 40px;
+                    margin-bottom: 40px;
+                    width: 45%;
+                    order: 2;
+                }
+
+                .character-man {
+                    width: 45%;
+                    order: 1;
+                    padding-right: 0;
+
+                    img {
+                        max-height: none;
+                    }
+                }
+            }
+        }
+    }
+
+    @include bp(1920px) {
+        left: calc((100% - 1920px) / 2);
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 180px;
+        /* prevent overlapping sticky footer */
+    }
+
+    @include bp(1920px) {
+        .hero-wrapper {
+            .content-experience {
+                max-width: 1680px;
+                background: url(#{$img-path}cerulean-trapezoid.svg) right 20px top 60px no-repeat;
+                background-size: auto;
+
+                .experience-wrapper {
+                    padding: 60px 70px 60px 80px;
+                    max-width: none;
+
+                    h2 {
+                        @include set-text($black, 62px, 80px, samsungsharpsans-bold);
+                    }
+
+                    p {
+                        @include set-text($black, 34px, 40px, samsungone);
+                    }
+                }
+            }
+        }
+    }
+}
+
+.sticky-header .content-samsung-developer-conference-home-launch .hero-wrapper {
+    padding-top: 240px;
+    @include bp-1200 {
+        padding-top: 330px;
+    }
+}

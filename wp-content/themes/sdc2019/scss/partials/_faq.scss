@@ -1,0 +1,503 @@
+.content-faq {
+  padding: 0 30px;
+
+  a:hover {
+    cursor: pointer;
+  }
+
+  @include set-text($black, 22px, 26px, samsungone);
+
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    @include set-text($black, 24px, 33px, samsungsharpsans-bold);
+
+    @include bp-1200 {
+      @include set-text($black, 62px, 86px, samsungsharpsans-bold);
+    }
+  }
+
+  h2 {
+    @include set-text($white, 18px, 18px, samsungone-bold);
+    text-align: center;
+    background: $toreabay;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    padding: 8px 0;
+
+    @include bp-1200 {
+      @include set-text($white, 34px, 40px, samsungone-black);
+      border-top-left-radius: 12px;
+      border-top-right-radius: 12px;
+      padding: 15px 0;
+    }
+  }
+
+  h3 {
+    @include set-text($black, 24px, 33px, samsungsharpsans-bold);
+    text-align: center;
+    margin-top: -6px;
+
+    @include bp-1200 {
+      @include set-text($black, 62px, 86px, samsungsharpsans-bold);
+      text-align: left;
+      margin-top: -30px;
+    }
+
+    &.section-header {
+      @include set-text($black, 25px, 28px, samsungone-black);
+      margin-top: 80px;
+      margin-bottom: 40px;
+
+      &.first-section {
+        margin-top: 0;
+        margin-bottom: 40px;
+      }
+
+
+      @include bp-1200 {
+        @include set-text($black, 40px, 48px, samsungone-black);
+      }
+    }
+  }
+
+  
+  .container {
+    max-width: 1900px;
+  }
+  
+  .search-wrapper {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 372px;
+    > .row {
+      @include bp-1200 {
+        position: sticky;
+        top: 135px;
+      }
+    }
+    .search-box {
+      margin: 30px 0 20px;
+
+      @include bp-1200 {
+        margin-top: 20px;
+      }
+
+      input {
+        background: url(#{$img-path}magnify.svg) 12px center no-repeat;
+
+        @include bp-1200 {
+
+        }
+      }
+    }
+
+    .topics {
+      margin: 20px 0;
+      border: 1px solid $black;
+      -webkit-border-radius: 8px;
+      -moz-border-radius: 8px;
+      border-radius: 8px;
+
+      ul.topics-list {
+        list-style: none;
+        margin-bottom: 0;
+        padding: 0;
+
+        li {
+          padding: 10px 20px;
+          border-bottom: 1px solid $black;
+          vertical-align: center;
+
+          &:last-of-type {
+            border-bottom: none;
+          }
+
+          a {
+            @include set-text($black, 14px, 16px, samsungone);
+          }
+        }
+      }
+
+      @include bp-1200 {
+        -webkit-border-radius: 12px;
+        -moz-border-radius: 12px;
+        border-radius: 12px;
+
+        ul.topics-list {
+          li {
+            padding: 12px 20px;
+            border: none;
+
+            a {
+              @include set-text($black, 22px, 26px, samsungone);
+            }
+          }
+        }
+      }
+    }
+
+    .contact-cta {
+      margin-top: 20px;
+      text-align: center;
+      @include bp-1200 {
+        position: sticky;
+        top: 525px;
+      }
+
+      p {
+        @include set-text($black, 14px, 16px, samsungone);
+      }
+
+      button {
+        @include set-text($white, 14px, 19px, samsungsharpsans-bold);
+        background: $toreabay;
+        margin: 0 0 10px 0;
+        padding: 8px 24px;
+        -webkit-border-radius: 25px;
+        -moz-border-radius: 25px;
+        border-radius: 25px;
+      }
+
+      @include bp-1200 {
+        margin-top: 30px;
+
+        p {
+          @include set-text($black, 22px, 26px, samsungone);
+        }
+
+        button {
+          @include set-text($white, 22px, 30px, samsungsharpsans-bold);
+          width: 100%;
+          padding: 16px;
+          -webkit-border-radius: 50px;
+          -moz-border-radius: 50px;
+          border-radius: 50px;
+        }
+      }
+    }
+
+    @include bp-1200 {
+      margin-left: auto;
+    }
+  }
+
+  .questions {
+    @include set-text($black, 14px, 16px, samsungone-black);
+    margin: 30px 0;
+
+    .gridrule {
+      height: 0.5px;
+      border-top: 0.5px solid $toreabay;
+    }
+
+    .grid-item {
+      padding: 10px 0;
+
+      &.open .question {
+
+        &::after {
+          content: '–';
+        }
+      }
+
+      .question {
+        padding-right: 40px;
+        &:after {
+          right: -40px;
+          top: -5px;
+          float: right;
+          content: '+';
+          @include set-text($black, 18px, 22px, samsungone-bold);
+          position: relative;
+        }
+      }
+
+      .answer {
+        padding-top: 30px;
+        display: none;
+        height: 0;
+        opacity: 0;
+
+        &.open {
+          display: block;
+          height: auto;
+          opacity: 1;
+          transition: opacity .5s ease-in-out;
+          -moz-transition: opacity .5s ease-in-out;
+          -webkit-transition: opacity .5s ease-in-out;
+        }
+
+        *, p {
+          @include set-text($black, 14px, 16px, samsungone-bold);
+        }
+      }
+    }
+
+    .no-results {
+      @include set-text($black, 14px, 16px, samsungone-black);
+      display: none;
+    }
+
+    @include bp-1200 {
+      margin-right: auto;
+      @include set-text($black, 28px, 40px, samsungone-black);
+
+      .gridrule {
+        margin-top: 1.3rem;
+      }
+
+      .grid-item {
+        .question {
+          &:after {
+            @include set-text($black, 60px, 50px, samsungone-bold);
+          }
+        }
+
+        .answer {
+          padding-top: 30px;
+
+          *, p {
+            @include set-text($black, 22px, 40px, samsungone-bold);
+          }
+        }
+      }
+    }
+
+    .no-results {
+      @include set-text($black, 14px, 16px, samsungone-black);
+    }
+
+  }
+
+  .modal {
+    .modal-xl {
+      max-width: 100%;
+    }
+
+    .modal-backdrop {
+      &.show {
+        opacity: 0 !important;
+      }
+
+      @include bp-1200 {
+        background-color: $cod-gray;
+
+        &.show {
+          opacity: 1 !important;
+        }
+      }
+    }
+
+    .modal-content {
+      height: calc(100vh - 80px);
+      margin-top: 80px;
+      padding: 30px;
+      border-radius: 0;
+      -webkit-border-radius: 0;
+
+      @include bp-576 {
+        height: calc(100vh - 104px);
+        margin-top: 104px;
+      }
+      @include bp-768 {
+        height: calc(100vh - 202px);
+        margin-top: 202px;
+      }
+
+      .modal-header {
+        border-bottom: none;
+      }
+
+      .close {
+        float: left;
+        opacity: 1;
+      }
+    }
+
+    input, textarea {
+      border-color: $dove-gray;
+      width: 100%;
+    }
+    input[type=radio] {
+      width: auto;
+    }
+
+    span.wpcf7-list-item {
+      margin: 0;
+      padding: 8px 0;
+      display: block;
+    }
+
+    @include bp-1200 {
+      .modal-dialog {
+        max-width: 1383px;
+      }
+
+      .modal-content {
+        height: auto;
+        padding: 50px 100px;
+        border-top: 36px solid $toreabay;
+
+        .close {
+          float: right;
+          padding: 1rem 0;
+          opacity: 1;
+        }
+      }
+
+      span.wpcf7-list-item {
+        display: inline-block;
+      }
+      .wpcf7-list-item-label {
+        @include set-text($black, 22px, 26px, samsungone);
+        padding-right: 30px;
+      }
+    }
+  }
+
+
+
+  .wpcf7 {
+    padding-top: 1rem;
+
+    .row {
+      div[class^="col-"] {
+        padding: 8px 0;
+
+        label {
+          span {
+            input, textarea {
+              margin-top: 4px;
+              padding: 2px 6px;
+            }
+
+            @include bp-1200 {
+              @include set-text($black, 22px, 26px, samsungone);
+
+              input, textarea {
+                margin-top: 8px;
+              }
+            }
+          }
+        }
+
+        @include bp-1200 {
+          &.email-input {
+            padding-left: 30px;
+          }
+        }
+      }
+    }
+  }
+
+  label {
+    width: 100%;
+    font-weight: normal;
+    padding-bottom: 2px;
+  }
+
+  input, textarea {
+    @include set-text($black, 14px, 28px, samsungone);
+    width: 100%;
+    padding: 0 12px 0 36px;
+    border: 1px solid $dove-gray;
+    -webkit-border-radius: 8px;
+    -moz-border-radius: 8px;
+    border-radius: 8px;
+
+    @include bp-1200 {
+      @include set-text($black, 22px, 26px, samsungone);
+      margin: 20px 0;
+      padding: 8px 12px 8px 36px;
+      border: 1px solid $dove-gray;
+      -webkit-border-radius: 12px;
+      -moz-border-radius: 12px;
+      border-radius: 12px;
+    }
+  }
+
+  input.wpcf7-submit {
+    width: auto;
+    background: $toreabay;
+    color: $white;
+    font-weight: bold;
+    padding: 0 18px;
+    border: 1px solid $toreabay;
+    -webkit-border-radius: 15px;
+    -moz-border-radius: 15px;
+    border-radius: 15px;
+
+    @include bp-1200 {
+      @include set-text($white, 22px, 30px, samsungsharpsans-bold);
+      width: 190px;
+      padding: 16px;
+      -webkit-border-radius: 50px;
+      -moz-border-radius: 50px;
+      border-radius: 50px;
+    }
+  }
+
+
+
+  /* custom radio buttons */
+  input[type=radio] {
+    //width: auto;
+    position: absolute;
+    top: auto;
+    overflow: hidden;
+    clip: rect(1px, 1px, 1px, 1px);
+    width: 1px;
+    height: 1px;
+    white-space: nowrap;
+  }
+
+  input[type=radio] + span:before {
+    content: '';
+    background: $white;
+    border: .1em solid rgba(0, 0, 0, .75);
+    background-color: rgba(255, 255, 255, .8);
+    display: block;
+    box-sizing: border-box;
+    float: left;
+    width: 1em;
+    height: 1em;
+    margin-top: .1em;
+    margin-right: .5em;
+    vertical-align: top;
+    cursor: pointer;
+    text-align: center;
+    transition: all .1s ease-out;
+
+    @include bp-1200 {
+      margin-top: .55em;
+    }
+  }
+
+  input[type=radio] + span:before {
+    border-radius: 100%;
+  }
+
+  input[type=radio]:checked + span:before {
+    background-color: $toreabay;
+    box-shadow: inset 0 0 0 .15em rgba(255, 255, 255, .95);
+  }
+  /* end custom radio buttons */
+
+
+  div.wpcf7-mail-sent-ok {
+    border: none;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 170px;
+    padding: 10px;
+    font-weight: normal;
+
+    @include bp-1200 {
+      max-width: 540px;
+      padding: 40px 20px 80px 20px;
+      font-weight: bold;
+    }
+  }
+
+}

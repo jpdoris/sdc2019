@@ -1,0 +1,18 @@
+footer.footer-page {
+    padding-top: 38px;
+    padding-bottom: 38px;
+
+    position: static;
+    bottom: auto;
+
+    @include bp-1200 {
+        padding-top: 60px;
+
+    }
+    max-width: none;
+    nav {
+        max-width: 1920px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
